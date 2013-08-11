@@ -44,5 +44,10 @@ public:
 	}
 
 	~Ray(void) {}
+
+	vec3f apply(float t) const
+	{
+		return location + direction*t;
+	}
 };
 

@@ -88,6 +88,11 @@ public:
 		return minShape;
 	}
 
+	Colour getShapeColor(Shape *shape, vec3f incidentRay, vec3f point) const
+	{
+		return Colour::blue();
+	}
+
 	Colour trace(const Ray& ray) const
 	{
 		Shape *shape;
@@ -98,7 +103,11 @@ public:
  		if (shape == NULL)
  			return Colour::black();
  
-		return Colour::blue(); //TODO возвращать нормальный цвет
+
+		vec3f incidentRay = ray.getDirection();
+		vec3f point = ray.apply(t);
+
+		return getShapeColor(shape, incidentRay, point);
 	}
 
 	Colour getColourOfPoint(int x, int y)
