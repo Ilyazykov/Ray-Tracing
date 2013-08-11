@@ -22,10 +22,10 @@ public:
 	virtual void setPixel(int x, int y, Colour colour)
 	{
 		uchar* p;
-		p = A.ptr<uchar>(x);
-		p[y*3] = colour.getBlue();
-		p[y*3 + 1] = colour.getGreen();
-		p[y*3 + 2] = colour.getRed();
+		p = A.ptr<uchar>(y);
+		p[x*3] = colour.getBlue();
+		p[x*3 + 1] = colour.getGreen();
+		p[x*3 + 2] = colour.getRed();
 	}
 
 	virtual void show()

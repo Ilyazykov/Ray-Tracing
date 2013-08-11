@@ -15,7 +15,7 @@ Scene scene; //TODO глобальная переменная - зло. Локализовать
 void constructScene()
 {
 	Camera camera(vec3f(0,4,0.3f), vec3f(0, 0, 0.5f), vec3f(0, 0, 1), 
-		480, 640, 0.48f, 0.64f, 1);	//TODO Слишком много аргументов
+		640, 480, 0.64f, 0.48f, 1);	//TODO Слишком много аргументов
 										//TODO Заставить display и camera работать вместе
 	scene = Scene(camera, 5, Colour::white()); //TODO Заменить магическое число 5 на константу
 
@@ -41,9 +41,9 @@ void main()
 	int width = display->getWidth();
 
 #pragma omp parallel for
-	for (int x=0; x<height; ++x)
+	for (int x=0; x<width; ++x)
 	{
-		for (int y=0; y<width; ++y)
+		for (int y=0; y<height; ++y)
 		{
 			display->setPixel( x, y, scene.getColourOfPoint(x,y));
 		}
