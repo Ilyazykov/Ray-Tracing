@@ -44,5 +44,10 @@ public:
  		if (smallerDistance >= 0) return smallerDistance;
  		return -1;
 	}
+
+	virtual vec3f getNormale(const vec3f& point) const
+	{
+		return (point - center).normalize();
+	}
 };
 

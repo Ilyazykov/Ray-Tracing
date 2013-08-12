@@ -33,5 +33,10 @@ public:
 
 		return distance;
 	}
+
+	virtual vec3f getNormale(const vec3f& point) const
+	{
+		return normale;
+	}
 };
 
