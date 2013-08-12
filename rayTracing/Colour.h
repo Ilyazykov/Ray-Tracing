@@ -1,5 +1,7 @@
 #pragma once
 
+#include <iostream>
+
 typedef unsigned char uchar;
 
 class Colour
@@ -9,81 +11,23 @@ class Colour
 	uchar r;
 
 public:
-	Colour(void)
-	{
-		b = g = r = 0;
-	}
+	Colour(void);
+	Colour(uchar a);
+	Colour(uchar blue, uchar green, uchar red);
+	Colour(const Colour& colour);
+	Colour(Colour&& colour);
+	Colour& operator=(const Colour& colour);
+	Colour& operator=(Colour&& colour);
 
-	Colour(uchar a)
-	{
-		b = g = r = a;
-	}
+	uchar getBlue();
+	uchar getGreen();
+	uchar getRed();
 
-	Colour(uchar blue, uchar green, uchar red)
-	{
-		this->b = blue;
-		this->g = green;
-		this->r = red;
-	}
+	static Colour white();
+	static Colour black();
+	static Colour blue();
+	static Colour green();
+	static Colour red();
 
-	Colour(const Colour& colour)
-	{
-		this->b = colour.b;
-		this->g = colour.g;
-		this->r = colour.r;
-	}
-
-	Colour& operator=(const Colour& colour)
-	{
-		this->b = colour.b;
-		this->g = colour.g;
-		this->r = colour.r;
-
-		return *this;
-	}
-
-	uchar getBlue()
-	{
-		return b;
-	}
-
-	uchar getGreen()
-	{
-		return g;
-	}
-
-	uchar getRed()
-	{
-		return r;
-	}
-
-	static Colour white()
-	{
-		return Colour(255);
-	}
-
-	static Colour black()
-	{
-		return Colour(0);
-	}
-
-	static Colour blue()
-	{
-		return Colour(255,0,0);
-	}
-
-	static Colour green()
-	{
-		return Colour(0,255,0);
-	}
-
-	static Colour red()
-	{
-		return Colour(0,0,255);
-	}
-
-	~Colour(void)
-	{
-
-	}
+	~Colour(void);
 };

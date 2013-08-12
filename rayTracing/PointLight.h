@@ -5,7 +5,7 @@
 
 typedef Vector3d<float> vec3f;
 
-class PointLight : public Light
+class PointLight : public Light //TODO
 {
 	vec3f location;
 

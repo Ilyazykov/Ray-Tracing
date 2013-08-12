@@ -7,7 +7,7 @@
 
 #include "Camera.h"
 
-class Scene
+class Scene //TODO
 {
 	Camera camera;
 
@@ -88,8 +88,12 @@ public:
 		return minShape;
 	}
 
-	Colour getShapeColor(Shape *shape, vec3f incidentRay, vec3f point) const
+	Colour getShapeColor(Shape *shape, const vec3f& incidentRay, const vec3f& point) const
 	{
+		Colour colour(0);
+
+		vec3f normale = shape->getNormale(point);
+
 		return Colour::blue();
 	}
 

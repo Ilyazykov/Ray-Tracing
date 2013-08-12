@@ -10,27 +10,9 @@ class DisplayWithOpenCV : public Display
 {
 	Mat A;
 public:
-	DisplayWithOpenCV(int width = 640, int height = 480)
-	{
-		this->width = width;
-		this->height = height;
+	DisplayWithOpenCV(int width = 640, int height = 480);
+	virtual ~DisplayWithOpenCV(void);
 
-		A.create(height, width, CV_8UC3);
-	}
-	virtual ~DisplayWithOpenCV(void) {}
-
-	virtual void setPixel(int x, int y, Colour colour)
-	{
-		uchar* p;
-		p = A.ptr<uchar>(y);
-		p[x*3] = colour.getBlue();
-		p[x*3 + 1] = colour.getGreen();
-		p[x*3 + 2] = colour.getRed();
-	}
-
-	virtual void show()
-	{
-		imshow("Window", A);
-		waitKey();
-	}
+	virtual void setPixel(int x, int y, Colour colour);
+	virtual void show();
 };

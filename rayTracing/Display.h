@@ -8,20 +8,13 @@ protected:
 	int width;
 	int height;
 public:
-	Display(void) {}
-	virtual ~Display(void) {}
-
-	int getWidth()
-	{
-		return width;
-	}
-
-	int getHeight()
-	{
-		return height;
-	}
+	Display(void);
+	
+	int getWidth();
+	int getHeight();
 
 	virtual void setPixel(int x, int y, Colour colour) = 0;
-
 	virtual void show() = 0;
+
+	virtual ~Display(void);
 };

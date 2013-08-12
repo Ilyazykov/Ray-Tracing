@@ -7,7 +7,12 @@ class Light
 protected:
 	Colour colour;
 public:
-	Light(void) {}
-	virtual ~Light(void) {}
+	Light(void) 
+	{
+		//TODO
+	}
+	virtual ~Light(void) 
+	{
+		//TODO
+	}
 };
-
