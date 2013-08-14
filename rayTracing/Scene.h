@@ -89,6 +89,18 @@ public:
 		return minShape;
 	}
 
+	bool isShadowed(const Ray& ray) const
+	{
+		float k;
+
+		for (int i=0; i<shapes.size();i++)
+		{
+			k = shapes[i]->intersect(ray);
+			if (k != -1) return false;
+		}
+		return true;
+	}
+
 	Colour getShapeColor(Shape *shape, const vec3f& incidentRay, const vec3f& point) const
 	{
 		Colour colour(0);
@@ -104,17 +116,23 @@ public:
 			vec3f vectorPointToLight;
 			float cosOfAngleNormaleReflection = lights[i]->shade(vectorPointToLight, point, normale);//vectorPointToLight is change TODO исправить
 
-			//Diffuse
-			colour += lights[i]->getColour() * cosOfAngleNormaleReflection *
-						shape->getMaterial().getColour() *
-						shape->getMaterial().getDiffuse();
+			Ray ray(point, vectorPointToLight.normalize());
+			ray.setLocation(ray.getLocation() + ray.getDirection()*EPS);
 
-			//Specular
-			float rDir = (vectorPointToLight.normalize() - incidentRay).normalize() * normale;
-			if (rDir > 0)
-				colour += lights[i]->getColour() *
-					shape->getMaterial().getSpecular() *
-					pow(rDir, shape->getMaterial().getPhong());
+			if (isShadowed(ray))
+			{
+				//Diffuse
+				colour += lights[i]->getColour() * cosOfAngleNormaleReflection *
+							shape->getMaterial().getColour() *
+							shape->getMaterial().getDiffuse();
+
+				//Specular
+				float rDir = (vectorPointToLight.normalize() - incidentRay).normalize() * normale;
+				if (rDir > 0)
+					colour += lights[i]->getColour() *
+						shape->getMaterial().getSpecular() *
+						pow(rDir, shape->getMaterial().getPhong());
+			}
 		}
 
 		return colour;
