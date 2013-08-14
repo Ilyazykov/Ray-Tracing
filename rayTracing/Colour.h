@@ -41,6 +41,15 @@ public:
 		return res;
 	}
 
+	Colour& operator*=(const Colour &colour)
+	{
+		r *= colour.r / 255;
+		g *= colour.g / 255;
+		b *= colour.b / 255;
+
+		return *this;
+	}
+
 	Colour& operator+=(const Colour &colour)
 	{
 		if (((int)r + (int)colour.r) > 255) r = 255;

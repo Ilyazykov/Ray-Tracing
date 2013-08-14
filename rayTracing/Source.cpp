@@ -19,8 +19,8 @@ void constructScene()
 										//TODO Заставить display и camera работать вместе
 	scene = Scene(camera, 5, Colour::white()); //TODO Заменить магическое число 5 на константу
 
-	Shape *plane = new Plane(vec3f(0,0,0), vec3f(0,0,1), setMaterial(GOLD)); //TODO Заменить на смарт-пойнтеры
-	Shape *sphere = new Sphere(vec3f(0, 0, 0.5f), 0.5f, setMaterial(SILVER));	//TODO Заменить на смарт-пойнтеры, a setMaterial сделать статическим членом класса material
+	Shape *plane = new Plane(vec3f(0,0,0), vec3f(0,0,1), setMaterial(SILVER)); //TODO Заменить на смарт-пойнтеры
+	Shape *sphere = new Sphere(vec3f(0, 0, 0.5f), 0.5f, setMaterial(GOLD));	//TODO Заменить на смарт-пойнтеры, a setMaterial сделать статическим членом класса material
 	
 	scene << plane << sphere; //TODO нужно ли перегружать оператор?
 	

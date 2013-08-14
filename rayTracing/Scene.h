@@ -140,11 +140,13 @@ public:
 			if(reflectionLevel < reflectionMaxLevel)
 			{
 				reflectionLevel++;
-				
+				reflectionPower = reflectionPower * shape->getMaterial().getReflection();
+
 					ray.setLocation(point + reflection*EPS);
 					ray.setDirection(reflection);
 
-					colour += trace(ray);
+					colour += trace(ray)*shape->getMaterial().getReflection() *
+						reflectionPower;
 
 				reflectionLevel--;
 			}

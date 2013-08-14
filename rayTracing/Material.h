@@ -23,7 +23,7 @@ public:
 		diffuse = 229;
 		specular = 0;
 
-		reflection = 0;
+		reflection = 130;
 
 		phong = 0;
 	}
