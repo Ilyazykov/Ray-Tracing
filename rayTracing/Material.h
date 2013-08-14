@@ -68,5 +68,10 @@ public:
 	{
 		return specular;
 	}
+
+	float getPhong()
+	{
+		return phong;
+	}
 };
 

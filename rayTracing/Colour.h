@@ -43,9 +43,14 @@ public:
 
 	Colour& operator+=(const Colour &colour)
 	{
-		r += colour.r;
-		g += colour.g;
-		b += colour.b;
+		if (((int)r + (int)colour.r) > 255) r = 255;
+		else r += colour.r;
+
+		if (((int)g + (int)colour.g) > 255) g = 255;
+		else g += colour.g;
+
+		if (((int)b + (int)colour.b) > 255) b = 255;
+		else b += colour.b;
 
 		return *this;
 	}

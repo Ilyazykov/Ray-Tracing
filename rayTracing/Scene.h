@@ -1,6 +1,7 @@
 #pragma once
 
 #include <vector>
+#include <cmath>
 
 #include "Shape.h"
 #include "Light.h"
@@ -95,8 +96,8 @@ public:
 		vec3f normale = shape->getNormale(point);
 
 		//Ambient
-		colour += ambient * shape->getMaterial().getColour()
-						* shape->getMaterial().getAmbient();
+ 		colour += ambient * shape->getMaterial().getColour()
+ 						* shape->getMaterial().getAmbient();
 
 		for (int i=0; i<lights.size(); i++)
 		{
@@ -107,6 +108,13 @@ public:
 			colour += lights[i]->getColour() * cosOfAngleNormaleReflection *
 						shape->getMaterial().getColour() *
 						shape->getMaterial().getDiffuse();
+
+			//Specular
+			float rDir = (vectorPointToLight.normalize() - incidentRay).normalize() * normale;
+			if (rDir > 0)
+				colour += lights[i]->getColour() *
+					shape->getMaterial().getSpecular() *
+					pow(rDir, shape->getMaterial().getPhong());
 		}
 
 		return colour;
