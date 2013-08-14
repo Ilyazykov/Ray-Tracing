@@ -13,7 +13,7 @@ class Colour
 public:
 	Colour(void);
 	Colour(uchar a);
-	Colour(uchar blue, uchar green, uchar red);
+	Colour(uchar red, uchar green, uchar blue);
 	Colour(const Colour& colour);
 	Colour(Colour&& colour);
 	Colour& operator=(const Colour& colour);

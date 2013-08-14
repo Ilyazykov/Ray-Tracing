@@ -101,7 +101,7 @@ public:
 		return true;
 	}
 
-	Colour getShapeColor(Shape *shape, const vec3f& incidentRay, const vec3f& point) const
+	Colour getShapeColor(Shape *shape, const vec3f& incidentRay, const vec3f& point)
 	{
 		Colour colour(0);
 
@@ -133,12 +133,27 @@ public:
 						shape->getMaterial().getSpecular() *
 						pow(rDir, shape->getMaterial().getPhong());
 			}
+
+			Colour reflectionPower = Colour::white();
+			vec3f reflection = (incidentRay - normale*2*(incidentRay*normale)).normalize();
+
+			if(reflectionLevel < reflectionMaxLevel)
+			{
+				reflectionLevel++;
+				
+					ray.setLocation(point + reflection*EPS);
+					ray.setDirection(reflection);
+
+					colour += trace(ray);
+
+				reflectionLevel--;
+			}
 		}
 
 		return colour;
 	}
 
-	Colour trace(const Ray& ray) const
+	Colour trace(const Ray& ray)
 	{
 		Shape *shape;
 		float t = -255;

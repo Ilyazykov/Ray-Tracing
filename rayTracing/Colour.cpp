@@ -10,7 +10,7 @@ Colour::Colour( uchar a )
 	b = g = r = a;
 }
 
-Colour::Colour( uchar blue, uchar green, uchar red )
+Colour::Colour( uchar red, uchar green, uchar blue )
 {
 	this->b = blue;
 	this->g = green;

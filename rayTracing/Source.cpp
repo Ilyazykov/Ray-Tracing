@@ -24,7 +24,7 @@ void constructScene()
 	
 	scene << plane << sphere; //TODO нужно ли перегружать оператор?
 	
-// 	scene << new PointLight(vec3f(8,3,8), Colour(255,255,255));
+// 	scene << new PointLight(vec3f(8,3,8), Colour(255,0,0));
  	scene << new PointLight(vec3f(-8,3,8), Colour(255,255,255));
 // 	scene << new PointLight(vec3f(0,4,5), Colour(0,0,255));
 }

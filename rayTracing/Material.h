@@ -10,15 +10,22 @@ class Material
 	Colour diffuse;
 	Colour specular;
 
+	Colour reflection;
+
 	float phong;
 
 public:
 	Material(void)
 	{
 		colour = 255;
+
 		ambient = 26;
 		diffuse = 229;
 		specular = 0;
+
+		reflection = 0;
+
+		phong = 0;
 	}
 	Material(const Colour& colour, const Colour& ambient,
 			 const Colour& diffuse, const Colour& specular)
@@ -67,6 +74,11 @@ public:
 	Colour getSpecular()
 	{
 		return specular;
+	}
+
+	Colour getReflection()
+	{
+		return reflection;
 	}
 
 	float getPhong()
