@@ -20,7 +20,7 @@ void constructScene()
 	scene = Scene(camera, 5, Colour::white()); //TODO «аменить магическое число 5 на константу
 
 	Shape *plane = new Plane(vec3f(0,0,0), vec3f(0,0,1), setMaterial(GOLD)); //TODO «аменить на смарт-пойнтеры
-	Shape *sphere = new Sphere(vec3f(0, 0, 0.5f), 0.5f, setMaterial(GOLD));	//TODO «аменить на смарт-пойнтеры, a setMaterial сделать статическим членом класса material
+	Shape *sphere = new Sphere(vec3f(0, 0, 0.5f), 0.5f, setMaterial(SILVER));	//TODO «аменить на смарт-пойнтеры, a setMaterial сделать статическим членом класса material
 	
 	scene << plane << sphere; //TODO нужно ли перегружать оператор?
 	

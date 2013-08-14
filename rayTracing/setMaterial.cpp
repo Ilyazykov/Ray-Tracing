@@ -12,13 +12,13 @@ Material setMaterial( int materialID )
 		material.setSpecular(Colour(160, 142, 93));
 		material.setPhong(51.2f);
 		break;
-	/*case 1:
-		material.setAmbient(Colour(63, 51, 19));
-		material.setDiffuse(Colour(192, 155, 58));
-		material.setSpecular(Colour(160, 142, 93));
+	case 1:
+		material.setAmbient(Colour(49));
+		material.setDiffuse(Colour(129));
+		material.setSpecular(Colour(130));
 		material.setPhong(51.2f);
 		break;
-	case 2:
+	/*case 2:
 		material.setAmbient(Colour(63, 51, 19));
 		material.setDiffuse(Colour(192, 155, 58));
 		material.setSpecular(Colour(160, 142, 93));

@@ -48,5 +48,25 @@ public:
 	{
 		this->phong = phong;
 	}
+
+	Colour getColour()
+	{
+		return colour;
+	}
+
+	Colour getAmbient()
+	{
+		return ambient;
+	}
+
+	Colour getDiffuse()
+	{
+		return diffuse;
+	}
+
+	Colour getSpecular()
+	{
+		return specular;
+	}
 };
 

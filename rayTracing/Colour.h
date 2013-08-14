@@ -19,6 +19,26 @@ public:
 	Colour& operator=(const Colour& colour);
 	Colour& operator=(Colour&& colour);
 
+	Colour operator*(const Colour &colour) const
+	{
+		Colour res;
+
+		res.r = r*colour.r /255;
+		res.g = g*colour.g /255;
+		res.b = b*colour.b /255;
+
+		return res;
+	}
+
+	Colour& operator+=(const Colour &colour)
+	{
+		r += colour.r;
+		g += colour.g;
+		b += colour.b;
+
+		return *this;
+	}
+
 	uchar getBlue();
 	uchar getGreen();
 	uchar getRed();

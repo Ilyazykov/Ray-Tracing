@@ -15,5 +15,10 @@ public:
 
 	virtual float intersect(const Ray& ray) const = 0;
 	virtual vec3f getNormale(const vec3f& point) const = 0;
+
+	Material getMaterial()
+	{
+		return material;
+	}
 };
 

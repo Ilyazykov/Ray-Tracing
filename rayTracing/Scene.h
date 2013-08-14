@@ -94,7 +94,10 @@ public:
 
 		vec3f normale = shape->getNormale(point);
 
-		return Colour::blue();
+		colour = ambient * shape->getMaterial().getColour()
+						* shape->getMaterial().getAmbient();
+
+		return colour;
 	}
 
 	Colour trace(const Ray& ray) const
