@@ -1,5 +1,7 @@
 #include "Camera.h"
 
+#include <iostream>
+
 Camera::Camera( vec3f location, vec3f lookAt, vec3f up, int x, int y, float w, float h, float distance )
 {
 	this->location = location;

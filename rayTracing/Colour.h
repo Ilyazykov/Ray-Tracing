@@ -34,7 +34,7 @@ public:
 	{
 		Colour res;
 
-		res.r = r*a;
+		res.r = (uchar)(r*a);
 		res.g = g*a;
 		res.b = b*a;
 

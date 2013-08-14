@@ -18,15 +18,9 @@ public:
 	vec3f getLocation() const;
 	vec3f getDirection() const;
 
-	void setLocation(vec3f location)
-	{
-		this->location = location;
-	}
+	void setLocation(vec3f location);
 
-	void setDirection(vec3f direction)
-	{
-		this->direction = direction;
-	}
+	void setDirection(vec3f direction);
 
 	vec3f apply(float t) const;
 

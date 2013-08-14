@@ -3,8 +3,6 @@
 #include "Vector3d.h"
 #include "Ray.h"
 
-#include <iostream>
-
 class Camera
 {
 	vec3f location;

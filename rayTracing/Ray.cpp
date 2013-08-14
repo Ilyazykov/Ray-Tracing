@@ -43,3 +43,13 @@ Ray::~Ray( void )
 {
 
 }
+
+void Ray::setLocation( vec3f location )
+{
+	this->location = location;
+}
+
+void Ray::setDirection( vec3f direction )
+{
+	this->direction = direction;
+}
