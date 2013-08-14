@@ -18,6 +18,16 @@ public:
 	vec3f getLocation() const;
 	vec3f getDirection() const;
 
+	void setLocation(vec3f location)
+	{
+		this->location = location;
+	}
+
+	void setDirection(vec3f direction)
+	{
+		this->direction = direction;
+	}
+
 	vec3f apply(float t) const;
 
 	~Ray(void);

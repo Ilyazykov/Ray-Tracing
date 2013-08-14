@@ -94,8 +94,20 @@ public:
 
 		vec3f normale = shape->getNormale(point);
 
-		colour = ambient * shape->getMaterial().getColour()
+		//Ambient
+		colour += ambient * shape->getMaterial().getColour()
 						* shape->getMaterial().getAmbient();
+
+		for (int i=0; i<lights.size(); i++)
+		{
+			vec3f vectorPointToLight;
+			float cosOfAngleNormaleReflection = lights[i]->shade(vectorPointToLight, point, normale);//vectorPointToLight is change TODO исправить
+
+			//Diffuse
+			colour += lights[i]->getColour() * cosOfAngleNormaleReflection *
+						shape->getMaterial().getColour() *
+						shape->getMaterial().getDiffuse();
+		}
 
 		return colour;
 	}

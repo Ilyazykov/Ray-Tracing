@@ -30,6 +30,17 @@ public:
 		return res;
 	}
 
+	Colour operator*(float a) const
+	{
+		Colour res;
+
+		res.r = r*a;
+		res.g = g*a;
+		res.b = b*a;
+
+		return res;
+	}
+
 	Colour& operator+=(const Colour &colour)
 	{
 		r += colour.r;

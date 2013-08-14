@@ -3,6 +3,8 @@
 #include <iostream>
 #include <cmath>
 
+#define EPS 0.0005
+
 template <class T>
 class Vector3d
 {
