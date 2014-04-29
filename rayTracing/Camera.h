@@ -16,10 +16,7 @@ class Camera
 
 	float distance;
 public:
-	Camera(void) 
-	{
-		//TODO
-	}
+	Camera(void);
 
 	Camera(vec3f location, vec3f lookAt, vec3f up, int x, int y, 
 		float w, float h, float distance);
@@ -28,10 +25,7 @@ public:
 
 	Camera(Camera&& cam);
 
-	void move(vec3f location, vec3f lookAt, vec3f up) 
-	{
-		//TODO
-	}
+	void move(vec3f location, vec3f lookAt, vec3f up);
 
 	~Camera(void) {}
 

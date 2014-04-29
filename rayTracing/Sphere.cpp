@@ -7,6 +7,11 @@ Sphere::Sphere( const vec3f& center, float radius, const Material& material )
 	this->material = material;
 }
 
+Sphere::Sphere(void)
+{
+	//TODO
+}
+
 float Sphere::intersect( const Ray& ray ) const
 {
 	vec3f temp = ray.getLocation() - this->center;

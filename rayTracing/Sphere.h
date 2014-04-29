@@ -10,10 +10,7 @@ class Sphere : public Shape
 	vec3f center;
 	float radius;
 public:
-	Sphere(void)
-	{
-		//TODO
-	}
+	Sphere(void);
 
 	Sphere(const vec3f& center, float radius, const Material& material);
 	virtual ~Sphere(void);

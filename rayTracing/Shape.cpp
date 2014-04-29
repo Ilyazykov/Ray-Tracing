@@ -9,3 +9,8 @@ Shape::~Shape()
 {
 
 }
+
+Material Shape::getMaterial()
+{
+	return material;
+}

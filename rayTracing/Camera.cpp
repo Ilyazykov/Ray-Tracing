@@ -44,6 +44,11 @@ Camera::Camera( Camera&& cam )
 	this->distance = std::move(cam.distance);
 }
 
+Camera::Camera(void)
+{
+	//TODO
+}
+
 Ray Camera::apply( int x, int y )
 {
 	Ray ray;
@@ -63,4 +68,9 @@ Ray Camera::apply( int x, int y )
 	ray = Ray(pointOfScreen, directionOfRay);
 
 	return ray;
+}
+
+void Camera::move(vec3f location, vec3f lookAt, vec3f up)
+{
+	//TODO
 }

@@ -8,19 +8,10 @@ class Light
 protected:
 	Colour colour;
 public:
-	Light(void) 
-	{
-		//TODO
-	}
-	virtual ~Light(void) 
-	{
-		//TODO
-	}
+	Light(void);
+	virtual ~Light(void);
 
 	virtual float shade(vec3f &incidentRay, const vec3f &point, const vec3f &normale) = 0;
 
-	Colour getColour()
-	{
-		return colour;
-	}
+	Colour getColour();
 };
